@@ -58,16 +58,16 @@ class Main extends PluginBase implements Listener{
 					$xz = cos(deg2rad($this->pitch));
 					for($i = $amount; $i >= -$amount; --$i){
 						$x = -$xz * sin(deg2rad($this->yaw + $i * $spread));
-					    $z = $xz * cos(deg2rad($this->yaw + $i * $spread));
-					    $vector = new Vector3($x, $y, $z);
-					    $this->level->addParticle(new CriticalParticle($vector->multiply($speed + $spawnOffset)->add($this)));
+						$z = $xz * cos(deg2rad($this->yaw + $i * $spread));
+						$vector = new Vector3($x, $y, $z);
+						$this->level->addParticle(new CriticalParticle($vector->multiply($speed + $spawnOffset)->add($this)));
 					}
 
 					$x = -$xz * sin(deg2rad($this->yaw));
 					$z = $xz * cos(deg2rad($this->yaw));
 					for($i = $amount; $i >= -$amount; --$i){
 						$y = -sin(deg2rad($this->pitch + $i * $spread));
-					    $vector = new Vector3($x, $y, $z);
+						$vector = new Vector3($x, $y, $z);
 						$this->level->addParticle(new CriticalParticle($vector->multiply($speed + $spawnOffset)->add($this)));
 					}
 
